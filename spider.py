@@ -36,7 +36,7 @@ class Spider:
             province_info = re.search(r'\[(.*?)\]', str(soup.find('script', attrs={'id': 'getListByCountryTypeService1'})))
             area_info = re.search(r'\[(.*)\]', str(soup.find('script', attrs={'id': 'getAreaStat'})))
 
-            if not any([sum_info, province_info, area_info, abroad_info]):
+            if not any([sum_info, province_info, area_info]):
                 continue
             self.sum_info_parser(sum_info)
 
@@ -76,6 +76,6 @@ class Spider:
             area['updateTime'] = self.timestamp
 
 
-if __name__ == "__main__":
-    s = Spider()
-    s.spider()
+# if __name__ == "__main__":
+#     s = Spider()
+#     s.spider()
